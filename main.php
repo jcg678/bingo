@@ -8,6 +8,14 @@
     
 <body>
 <?php
+
+    
+ if (isset($_POST['numero'])) {
+          Echo "Se ha pulsado numero";
+     } else if (isset($_POST['nuevo'])) {
+          Echo "Se ha nuevo";
+     }
+
 /**
  * Created by PhpStorm.
  * User: alumno
