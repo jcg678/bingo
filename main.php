@@ -8,12 +8,41 @@
     
 <body>
 <?php
-
+session_start();
     
  if (isset($_POST['numero'])) {
           Echo "Se ha pulsado numero";
-     } else if (isset($_POST['nuevo'])) {
-          Echo "Se ha nuevo";
+
+
+
+     if (!isset($_SESSION['count'])) {
+
+         $_SESSION['count'] = 0;
+         $valores = array();
+
+         for($i=0;$i<90;$i++)
+         {
+
+             $valores[$i]=$i+1;
+         }
+
+         shuffle($valores);
+         $_SESSION['valores']=$valores;
+
+     } else {
+         $_SESSION['count']++;
+     }
+
+     $valores=$_SESSION['valores'];
+
+     echo $_SESSION['count']."<br>";
+     echo $valores[$_SESSION['count']]."<br>";
+    echo var_dump($valores);
+
+
+
+ } else if (isset($_POST['nuevo'])) {
+     session_destroy();
      }
 
 /**
@@ -39,10 +68,7 @@ echo "<tr>";
 				echo "<td>" . $i . "</td>";
 			}
 		}
-			
-				
-			
-		
+
 			if($i==10){
 				if($x==8){
 					
