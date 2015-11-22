@@ -11,7 +11,7 @@
 session_start();
     
  if (isset($_POST['numero'])) {
-          Echo "Se ha pulsado numero";
+          
 
 
 
@@ -35,9 +35,9 @@ session_start();
 
      $valores=$_SESSION['valores'];
 
-     echo $_SESSION['count']."<br>";
-     echo $valores[$_SESSION['count']]."<br>";
-    echo var_dump($valores);
+     
+     echo "<h1>".$valores[$_SESSION['count']]."</h1>";
+    
 
 
 
