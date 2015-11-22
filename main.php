@@ -19,7 +19,7 @@ session_start();
 
          $_SESSION['count'] = 0;
          $valores = array();
-
+		$fuera= array();
          for($i=0;$i<90;$i++)
          {
 
@@ -28,16 +28,22 @@ session_start();
 
          shuffle($valores);
          $_SESSION['valores']=$valores;
+		 array_push($fuera,$valores[$_SESSION['count']] );
+		 $_SESSION['fuera']=$fuera;
 
      } else {
+		 $valores=$_SESSION['valores'];
+		 $fuera =$_SESSION['fuera'];
          $_SESSION['count']++;
+		 array_push($fuera,$valores[$_SESSION['count']] );
+		 $_SESSION['fuera']=$fuera;
      }
 
-     $valores=$_SESSION['valores'];
+     
 
      
      echo "<h1>".$valores[$_SESSION['count']]."</h1>";
-    
+    echo var_dump($fuera);
 
 
 
