@@ -11,14 +11,20 @@
 
 function casilla($num, $numeros )
 {
-
-	if (in_array($num, $numeros)) {
-    echo "<td bgcolor=black>" . $num . "</td>";
-	}
-	else{
-		echo "<td>" . $num . "</td>";
-	}
 	
+	$final = end($numeros);
+	
+	if($final == $num){
+		echo "<td class=ultimo >" . $num . "</td>";
+	}else{
+
+		if (in_array($num, $numeros)) {
+			echo "<td class=marcado >" . $num . "</td>";
+		}
+		else{
+			echo "<td>" . $num . "</td>";
+		}
+	}
 }
 
 
@@ -58,7 +64,7 @@ session_start();
 
      
      echo "<h1>".$valores[$_SESSION['count']]."</h1>";
-    echo var_dump($fuera);
+    //echo var_dump($fuera);
 
 
 
@@ -95,7 +101,6 @@ echo "<tr>";
 				if($x==8){
 					casilla($res, $fuera );
 					//echo "<td>" . $res . "</td>";
-
 				}
 				else
 			echo "<td></td>";
@@ -107,8 +112,6 @@ echo "<tr>";
     }
     echo "</tr>";
 }
-
-
 echo "</table>";
 ?>
 <form action="main.php" method="post">
