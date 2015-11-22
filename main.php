@@ -8,6 +8,21 @@
     
 <body>
 <?php
+
+function casilla($num, $numeros )
+{
+
+	if (in_array($num, $numeros)) {
+    echo "<td bgcolor=black>" . $num . "</td>";
+	}
+	else{
+		echo "<td>" . $num . "</td>";
+	}
+	
+}
+
+
+
 session_start();
     
  if (isset($_POST['numero'])) {
@@ -71,21 +86,23 @@ echo "<tr>";
 				echo "<td></td>";
 			}
 			else{
-				echo "<td>" . $i . "</td>";
+				casilla($i, $fuera );
+				//echo "<td>" . $i . "</td>";
 			}
 		}
 
 			if($i==10){
 				if($x==8){
-					
-					echo "<td>" . $res . "</td>";
+					casilla($res, $fuera );
+					//echo "<td>" . $res . "</td>";
 
 				}
 				else
 			echo "<td></td>";
 			}
 			else
-			echo "<td>" . $res . "</td>";
+				casilla($res, $fuera );
+		//echo "<td>" . $res . "</td>";
 
     }
     echo "</tr>";
