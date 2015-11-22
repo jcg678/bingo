@@ -111,12 +111,26 @@ echo "<tr>";
 
     }
     echo "</tr>";
+	
+	
+	
 }
 echo "</table>";
+
+echo "<form action=main.php method=post>";
+	if(count($fuera)==90){
+		echo "<input type=submit name=numero value='Obtener Número' disabled=true/>";
+	}
+	else{
+		echo "<input type=submit name=numero value='Obtener Número'/>";
+	}
+	
+	print "<input type=submit name=nuevo value='Juego Nuevo'/>";
+	echo "</form>";
 ?>
-<form action="main.php" method="post">
-<input type="submit" name="numero" value="Obtener Número"/>
-<input type="submit" name="nuevo" value="Juego Nuevo"/>    
+
+
+  
 </body>
 </html>
 
