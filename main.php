@@ -8,16 +8,13 @@
     
 <body>
 <?php
-
+session_start();
 function casilla($num, $numeros )
 {
-	
 	$final = end($numeros);
-	
 	if($final == $num){
 		echo "<td class=ultimo >" . $num . "</td>";
 	}else{
-
 		if (in_array($num, $numeros)) {
 			echo "<td class=marcado >" . $num . "</td>";
 		}
@@ -27,15 +24,23 @@ function casilla($num, $numeros )
 	}
 }
 
+ if (isset($_POST['comprobar'])){
+	  $fuera =$_SESSION['fuera'];
+	 //$num= $_POST['1_1'];
+     $jugados= array(); 
+	  //echo $num;
+	   for ($i = 1; $i <= 3; $i++) {
+            for ($j = 1; $j <= 9; $j++) {
+                print  $_POST[$i."_".$j];
+				array_push($jugados,$_POST[$i."_".$j] );
+            }
+            
+        }
+	   //var_dump($jugados);
+ }
 
-
-session_start();
-    
  if (isset($_POST['numero'])) {
-          
-
-
-
+ 
      if (!isset($_SESSION['count'])) {
 
          $_SESSION['count'] = 0;
@@ -80,6 +85,7 @@ session_start();
  */
  
 echo "BINGO";
+
 echo "<table border='3'>";
 for($i=0 ;$i<=10 ;$i++){
 echo "<tr>";
@@ -126,6 +132,15 @@ echo "<form action=main.php method=post>";
 	}
 	
 	print "<input type=submit name=nuevo value='Juego Nuevo'/>";
+	echo "<br><div id=carton>";
+	for ($i = 1; $i <= 3; $i++) {
+            for ($j = 1; $j <= 9; $j++) {
+                print  "<input type=text name='".$i."_".$j."'/>";
+            }
+            echo "<br/>";
+        }
+		echo "</div>";
+	print "<input type=submit name=comprobar value='Comprobar'/>";	
 	echo "</form>";
 ?>
 
