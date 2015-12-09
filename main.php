@@ -7,6 +7,7 @@
 </head>
     
 <body>
+<div id="contenedor">
 <?php
 session_start();
 function casilla($num, $numeros)
@@ -89,7 +90,7 @@ $comprobarLinea=0;
      
 
      
-     echo "<h1>".$valores[$_SESSION['count']]."</h1>";
+     
     //echo var_dump($fuera);
 
 
@@ -105,8 +106,10 @@ $comprobarLinea=0;
  * Time: 13:22
  */
  
-echo "BINGO";
-
+echo "<h2>BINGO</h2>";
+	if(isset($_SESSION['fuera'])){
+	echo "<h1>".$valores[$_SESSION['count']]."</h1>";
+	}
 echo "<table border='3'>";
 for($i=0 ;$i<=10 ;$i++){
 echo "<tr>";
@@ -193,7 +196,7 @@ echo "<form action=main.php method=post>";
 ?>
 
 
-  
+  </div>
 </body>
 </html>
 

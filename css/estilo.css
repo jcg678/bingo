@@ -1,5 +1,29 @@
 table{color:black;}
-td{width:20px;height:20px;text-align:center;font-size:bold;}
+body{background-image:url('../images/bingo.jpg');
+
+margin: 0 auto;
+
+}
+td{width:20px;
+height:20px;
+text-align:center;
+font-size:bold;
+background-color:white;
+}
+table{border:3px solid red;}
 .ultimo{background-color:red;}
-.marcado{background:yellow;}
-#carton input{width:20px;height:20px;}
+.marcado{background:yellow;
+
+}
+#carton input{width:20px;height:20px;
+
+}
+h3{background-color:red;}
+h2{background-color:white;width:250px;}
+h1{background-color:white;width:250px;}
+h2+h1{border:2px solid black;text-align:center; }
+
+#contenedor{
+	margin-left:36%;
+
+}
